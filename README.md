@@ -23,10 +23,16 @@ admin:x:1006:user1,root
 ```
 Проверим вход под ними (я использую BitwiseSSH как ssh клиент):
 ```
-[user1@yarkozloff ~]$ whoami
-user1
 [user1@yarkozloff ~]$ pwd
 /home/user1
+[user1@yarkozloff ~]$ id
+uid=1001(user1) gid=1001(user1) groups=1001(user1),1006(admin)
+```
+```
+[user3@yarkozloff ~]$ pwd
+/home/user3
+[user3@yarkozloff ~]$ id
+uid=1003(user3) gid=1003(user3) groups=1003(user3)
 ```
  ### Модуль pam_time
  Модуль pam_time позволяет достаточно гибко настроить доступ пользователя с учетом времени. Настройки данного модуля хранятся в файле /etc/security/time.conf.
