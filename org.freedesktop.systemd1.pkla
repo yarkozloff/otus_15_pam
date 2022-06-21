@@ -1,0 +1,6 @@
+[Allow user docker_user to run systemctl commands]
+Identity=unix-user:docker_user
+Action=org.freedesktop.systemd1.manage-units
+ResultInactive=no
+ResultActive=no
+ResultAny=yes
